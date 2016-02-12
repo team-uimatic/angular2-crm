@@ -1,0 +1,23 @@
+
+   <!-- Table row -->
+  <div class="row" ng-controller="listcountry">
+    <div class="mailbox-controls" ng-include src="'templates/list_pagination.html'"></div>
+	<div class="col-xs-12 table-responsive">
+	  <table class="table table-striped">
+		<thead>
+		<tr>
+		  <th>Id</th>
+		  <th>Country</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "record in records">
+				<td ng-cloak>{{record.id_country}}</td>
+				<td ng-cloak>{{record.countryname}}</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>
+	<!-- /.col -->
+  </div>
+  <!-- /.row -->

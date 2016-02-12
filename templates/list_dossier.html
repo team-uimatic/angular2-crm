@@ -1,0 +1,31 @@
+
+   <!-- Table row -->
+  <div class="row" ng-controller="listdossier">
+    <div class="mailbox-controls" ng-include src="'templates/list_pagination.html'"></div>
+	<div class="col-xs-12 table-responsive">
+	  <table class="table table-striped">
+		<thead>
+		<tr>
+		  <th>Id</th>
+		  <th>Type</th>
+		  <th>Date</th>
+		  <th>Status</th>
+		  <th>Client</th>
+		  <th>Contact</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "record in records">
+				<td ng-cloak>{{record.id_dossier}}</td>
+				<td ng-cloak>{{record.dossiertypename}}</td>
+				<td ng-cloak>{{record.createdate}}</td>
+				<td ng-cloak>{{record.status}}</td>
+				<td ng-cloak>{{record.accountname}}</td>
+				<td ng-cloak>{{record.firstname}} {{record.lastname}}</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>
+	<!-- /.col -->
+  </div>
+  <!-- /.row -->

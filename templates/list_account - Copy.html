@@ -1,0 +1,101 @@
+<!-- Table row -->
+<div class="row">
+
+    <div class="mailbox-controls"></div>
+
+    <div class="col-xs-12 table-responsive" >
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>Addresse</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Telephone</th>
+                    <th>email</th>
+                    <th>Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ng-for="#record of account.records">
+                    <td class="ng-binding">{{record.accountname}}</td>
+                    <td class="ng-binding">{{record.address1}} {{record.address2}}</td>
+                    <td class="ng-binding">{{record.city}}</td>
+                    <td class="ng-binding">{{record.countryname}}</td>
+                    <td class="ng-binding">{{record.phone}}</td>
+                    <td class="ng-binding">{{record.email}}</td>
+                    <td class="ng-binding">{{record.id_account}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- /.col -->
+    <div class="col-xs-12 col-md-12">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewModal">
+            Add New
+        </button>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Add New Modal -->
+<div class="modal fade" id="addNewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Account</h4>
+            </div>
+            <div class="modal-body">
+                   <form>
+                        <div class="form-group">
+                          <label for="name">Account Name</label>
+                          <input type="text"  [(ngModel)]="accountname" placeholder="Enter Account Name" class="form-control" required>
+                        </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Email</label>
+                          <input  type="email" [(ngModel)]="email" placeholder="Enter Email" class="form-control" required>
+                        </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Phone</label>
+                          <input type="text" [(ngModel)]="phone" placeholder="Enter Phone"  class="form-control" required>
+                        </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Address1</label>
+                          <input type="text" [(ngModel)]="address1" placeholder="Enter " class="form-control" required>
+                       </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Address2</label>
+                          <input type="text" [(ngModel)]="address2" placeholder="Enter "  class="form-control" required>
+                       </div>
+                       
+                       <div class="form-group">
+                          <label for="name">City</label>
+                          <input type="text" [(ngModel)]="city" placeholder="Enter "  class="form-control" required>
+                       </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Zipcode</label>
+                          <input type="text" [(ngModel)]="zipcode" placeholder="Enter "  class="form-control" required>
+                       </div>
+                       
+                       <div class="form-group">
+                          <label for="name">Country</label>
+<!--                          <select class="form-control">
+                              <option *ng-for="#country of countrylist.records" value="{{country.id_country}}">{{country.countryname}}</option>
+                          </select>-->
+                       </div>
+                    </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+

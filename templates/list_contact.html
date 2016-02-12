@@ -1,0 +1,36 @@
+  <!-- Table row -->
+  <div class="row" ng-controller="listaccount">
+  
+    <div class="mailbox-controls" ng-include src="'templates/list_pagination.html'"></div>
+		  
+	<div class="col-xs-12 table-responsive" >
+	  <table class="table table-striped">
+		<thead>
+		<tr>
+		  <th>Contact Name</th>
+		  <th>Account Name</th>
+		  <th>Addresse</th>
+		  <th>City</th>
+		  <th>Country</th>	
+		  <th>Telephone</th>
+		  <th>email</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "record in records">
+				<td ng-cloak>{{record.firstname}} {{record.lastname}}</td>
+				<td ng-cloak>{{record.accountname}}</td>
+				<td ng-cloak>{{record.address1}} {{record.address2}}</td>
+				<td ng-cloak>{{record.city}}</td>
+				<td ng-cloak>{{record.countryname}}</td>
+				<td ng-cloak>{{record.phone}}</td>
+				<td ng-cloak>{{record.email}}</td>
+			</tr>
+		</tbody>
+	  </table>
+ 
+	</div>
+	<!-- /.col -->
+  </div>
+  <!-- /.row -->
+

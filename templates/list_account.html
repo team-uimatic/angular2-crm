@@ -1,0 +1,180 @@
+<!-- Table row -->
+<style>
+    .form-control.ng-dirty.ng-touched.ng-invalid{
+        border:1px solid #ff0000;
+    }
+</style>
+<div class="row">
+
+    <div class="mailbox-controls"></div>
+
+    <div class="col-xs-12 table-responsive" >
+        <table id='list_accounts' class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Account Name</th>
+                    <th>Addresse</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Telephone</th>
+                    <th>email</th>
+                    <th>Id</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="#record of getData.records">
+                    <td class="ng-binding">{{record.accountname}}</td>
+                    <td class="ng-binding">{{record.address1}} {{record.address2}}</td>
+                    <td class="ng-binding">{{record.city}}</td>
+                    <td class="ng-binding">{{record.countryname}}</td>
+                    <td class="ng-binding">{{record.phone}}</td>
+                    <td class="ng-binding">{{record.email}}</td>
+                    <td class="ng-binding">{{record.id_account}}</td>
+                    <td class="ng-binding"><a (click)="onViewAccount(record.id_account)" class="label label-warning" data-toggle="modal" data-target="#viewActivity">View</a>&nbsp; &nbsp; &nbsp;<a (click)="onEditAccount(94)" class="label label-warning" data-toggle="modal" data-target="#addNewModal">Edit</a>&nbsp; &nbsp; &nbsp;<a class="label label-danger">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- /.btn-group -->
+        <!--<button type="button" class="btn btn-default btn-sm" ng-click="pagerefresh()"><i class="fa fa-refresh"></i></button>-->
+        <div class="pull-right">
+            Activities: {{getData.currentActivity}}    <!--1-50/200-->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-sm " ng-class="disablepageprev()" (click) = "pageprev()"><i class="fa fa-chevron-left"></i></button>
+                <button type="button" class="btn btn-default btn-sm" ng-class="disablenextprev()"  (click)= "pagenext()"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            Page:{{getData.currentPage}}
+            <!-- /.btn-group -->
+        </div>
+        <!-- /.pull-right -->
+    </div>
+    <!-- /.col -->
+    <div class="col-xs-12 col-md-12">
+        <button (click)="onAddAccount()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewModal">
+            Add New
+        </button>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Add New Modal -->
+<div class="modal fade" id="addNewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{formState}} Account</h4>
+            </div>
+            <div class="modal-body">
+                <p>Note: Please do not use special charecters like(#,$,& etc).</p>
+                <form (ngSubmit)="onSubmit()" #AccountForm="ngForm">
+                    <div class="form-group">
+                        <label for="name">Account Name</label>
+                        <input type="text"  [(ngModel)]="accountname" value="{{accountname}}" placeholder="Enter Account Name" class="form-control" required pattern="[a-zA-Z0-9 ]+">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input  type="email" [(ngModel)]="email" value="{{email}}" placeholder="Enter Email" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Phone</label>
+                        <input type="text" [(ngModel)]="phone" value="{{phone}}" placeholder="Enter Phone"  class="form-control" pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Address1</label>
+                        <input type="text" [(ngModel)]="address1" value="{{address1}}" placeholder="Enter Address 1" class="form-control" pattern="[a-zA-Z0-9 ]+">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Address2</label>
+                        <input type="text" [(ngModel)]="address2" value="{{address2}}" placeholder="Enter Address 2"  class="form-control" pattern="[a-zA-Z0-9 ]+">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">City</label>
+                        <input type="text" [(ngModel)]="city" value="{{city}}" placeholder="Enter City"  class="form-control" pattern="[a-zA-Z0-9 ]+">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Zipcode</label>
+                        <input type="text" [(ngModel)]="zipcode" value="{{zipcode}}" placeholder="Enter Zipcode"  class="form-control" pattern="[a-zA-Z0-9 ]+">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Country</label>
+                        <select class="form-control" [(ngModel)]="id_country">
+                            <option *ngFor="#country of getCountryData.records" value="{{country.id_country}}">{{country.countryname}}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Add New Modal -->
+<div class="modal fade" id="viewActivity" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">View Account</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Account Name</label>
+                        <span >{{accountname}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <span >{{email}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Phone</label>
+                        <span >{{phone}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Address1</label>
+                        <span >{{address1}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Address2</label>         
+                        <span >{{address2}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">City</label>
+                        <span >{{city}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Zipcode</label>
+                        <span >{{zipcode}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Country</label>
+                        <span >{{countryname}}</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

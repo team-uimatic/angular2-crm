@@ -1,0 +1,285 @@
+.periodselect {
+	display:inline-block;
+	padding:5px;
+	border:1px solid #333333;
+	background-color:#ededed;
+	margin:3px;
+	cursor: pointer; 
+}
+.dayselect {
+	display:inline-block;
+	padding:8px;
+	background-color:#f5f5f5 ;
+	font-size:13px;
+	margin:0px;
+	cursor: pointer; 
+}
+.periodlabels {
+	font-size:14px;
+	color:darkred; 
+}
+
+
+.periodtimefrom {
+	background-color:#EBF1DE;
+	font-size:13px;
+	cursor: pointer; 
+}
+.periodtimeto {
+	background-color:#DCE6F1;
+	font-size:13px;
+	cursor: pointer; 
+}
+.updatesectioncrm  {
+	cursor: pointer; 
+}
+.crmform  select {
+	float:none;
+	width:320px;
+}
+
+
+.crmform  a  {
+	cursor: pointer; 
+	padding: 2px;
+}
+.crmform  a  img {
+	padding-right:3px;
+}
+.crmform  select {
+	float:none;
+	width:250px;
+}
+.crmform  input[type="checkbox"],input[type="radio"]{
+  vertical-align:middle;
+}
+.crmform .labelradio {
+	float:none;
+	font-size:14px;
+	margin: 0px;
+	padding:2px 0px 0px 0px;
+	min-height:22px;
+}
+
+.crmform  .radiocontainer {
+  margin:3px 0;
+  padding:0;
+  text-align:justify;
+	
+}
+.crmform  input[type="checkbox"]+label,input[type="radio"]+label{
+  cursor:pointer;
+}
+.crmform  input[type="checkbox"]+label:before,input[type="radio"]+label:before{
+  content:"";
+  display:inline-block;
+  font-size: 20px;
+  height:24px;
+  margin:-3px 4px 0 -15px;
+  padding: 0px;
+  vertical-align:middle;
+  width:24px;
+}
+.crmsimpletoobar {
+	border:0px solid black;
+	padding:4px;
+	margin-top:0px;
+	margin-bottom:20px;
+	background-color:#ededed;
+
+}
+.crmsimpletoobarwhite {
+	border-bottom:1px dashed #cdcdcd;
+	padding:4px;
+	margin-top:0px;
+	margin-bottom:5px;
+	background-color:#ffffff;
+
+}
+.crmcontainertitle {
+	border-bottom:1px solid #cccccc;
+	padding:5px;
+	margin-top:20px;
+	margin-bottom:0px;
+}
+.crmcontainertitle span {
+	position: absolute;
+	margin-left:75px;
+	margin-top: 10px;
+	left:0px;
+	font-size:17px;
+}
+
+.crmcontainertitle img {
+	margin-top: 5px;
+	width:40px;
+	height:35px;
+}
+
+.crmcontainerblockdata1  {
+    border: 1px dashed #ddd;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
+}
+
+.crmcontainerblockdata1 div  {
+	margin-left: 35px;
+}
+.crmlayout , .crmlayout  td {
+  border:0px;
+}
+.crmform  input[type="checkbox"]+label:before{
+  background:url(/modules/crm/icons/check_radio_sheet.png)left top no-repeat;
+}
+.crmform  input[type="checkbox"]:checked+label:before{
+  color:#F06586;   
+  background:url(/modules/crm/icons/check_radio_sheet.png)-19px top no-repeat;
+}
+.crmform  input[type="radio"]+label:before{
+  #background:url(/modules/crm/icons/check_radio_sheet.png)left top no-repeat;
+}
+.crmform  input[type="radio"]:checked+label:before{
+  background:#CFFAD9 url(/modules/crm/icons/check24.png) left top no-repeat;
+}
+.crmform   input[type="radio"]:checked + label {
+  background-color:#CFFAD9;
+}
+
+.crmtable {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px #ccc;
+}
+.crmtable tr:hover {
+    background: #fbf8e9 none repeat scroll 0 0;
+    transition: all 0.1s ease-in-out 0s;
+}
+.crmtable td, .crmtable th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.crmtable th {
+    background-color: #dce9f9;
+    background-image: -moz-linear-gradient(center top , #ebf3fc, #dce9f9);
+    border-top: medium none;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.crmtable td:first-child, .crmtable th:first-child {
+    border-left: medium none;
+}
+.crmtable th:first-child {
+    border-radius: 6px 0 0;
+}
+.crmtable th:last-child {
+    border-radius: 0 6px 0 0;
+}
+.crmtable th:only-child {
+    border-radius: 6px 6px 0 0;
+}
+.crmtable tr:last-child td:first-child {
+    border-radius: 0 0 0 6px;
+}
+.crmtable tr:last-child td:last-child {
+    border-radius: 0 0 6px;
+}
+
+/* Absolute Center Spinner */
+.crmloading {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+.crmloading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

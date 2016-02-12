@@ -1,0 +1,37 @@
+<!-- template type: TODO list -->
+	
+<div class="box box-primary" ng-controller="listcrmheader">
+<div class="box-header">
+  <i class="ion ion-clipboard"></i>
+  <h3 class="box-title">Dossiers</h3>
+  <div class="box-tools pull-right">
+     <div ng-include src="'templates/list_pagination_mini.html'"></div>
+  </div>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+	  <table class="table table-striped">
+		<thead>
+		<tr>
+		  <th>Id</th>
+		  <th>Type</th>
+		  <th>Date</th>
+		  <th>Client</th>
+		  <th>Contact</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat = "record in records">
+				<td ng-cloak>{{record.id_crmheader}}</td>
+				<td ng-cloak>{{record.crm_headertype___description}}</td>
+				<td ng-cloak>{{record.createdate}}</td>
+				<td ng-cloak>{{record.customer___fullname}}</td>
+				<td ng-cloak>{{record.contact___fullname}}</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>
+	<!-- /.col -->
+  </div>
+  <!-- /.row -->
+  
